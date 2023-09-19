@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { NavPage } from "./NavPage";
+import { useState, useEffect } from "react";
 import Character from "./Character";
-import NavPage from "./NavPage";
-
-<NavPage/>
 
 function CharacterList() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
+
   const handleSearchUpdate = (event) => {
     setSearchValue(event.target.value);
   };
@@ -30,7 +29,6 @@ function CharacterList() {
 
     fetchData();
   }, [page, searchValue]);
-
   return (
     <div className="contaniner">
       <NavPage
@@ -38,6 +36,7 @@ function CharacterList() {
         setPage={setPage}
         handleSearchUpdate={handleSearchUpdate}
       />
+
       {loading ? (
         <h1>Cargando</h1>
       ) : (
@@ -51,7 +50,6 @@ function CharacterList() {
           })}
         </div>
       )}
-
       <NavPage
         page={page}
         setPage={setPage}
