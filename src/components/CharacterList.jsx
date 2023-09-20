@@ -50,11 +50,7 @@ function CharacterList() {
           })}
         </div>
       )}
-      <NavPage
-        page={page}
-        setPage={setPage}
-        handleSearchUpdate={handleSearchUpdate}
-      />
+      
     </div>
   );
 }
